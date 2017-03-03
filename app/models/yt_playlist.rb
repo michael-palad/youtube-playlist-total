@@ -29,7 +29,7 @@ class YtPlaylist
           video = Yt::Video.new(id: item.video_id)
           @videos << { title: video.title, length: video.length }
         rescue
-          next
+          next  # for deleted and invalid videos
         end
         total_duration += video.duration
       end

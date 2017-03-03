@@ -31,7 +31,6 @@ end
 
 group :test do
   gem 'capybara', '~> 2.12'
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'  
 end
 
 group :production do
