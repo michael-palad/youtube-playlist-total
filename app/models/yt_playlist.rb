@@ -9,7 +9,6 @@ class YtPlaylist
   
   def process_playlist
     Yt.configuration.api_key = Rails.application.secrets.youtube_api_key
-    byebug  
     query_hash = Rack::Utils.parse_query URI(self.url).query
     if query_hash['list'].nil?
       errors.add(:url, "Not a valid playlist url")

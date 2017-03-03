@@ -3,11 +3,23 @@
 <h3><%= @playlist.title %></h3>
 
 <% if @playlist.videos.any? %>
-  <ul>
-    <% @playlist.videos.each do |video| %>
-      <li><%= video[:title] %> - <%= video[:length] %></li>
-    <% end %>
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Video Title</th>       
+        <th>Video Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @playlist.videos.each do |video| %>
+        <tr>
+          <td><%= video[:title] %></td>
+          <td><%= video[:length] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
   <p>
     Total Duration: <%= @playlist.total_duration %>
   </p>
