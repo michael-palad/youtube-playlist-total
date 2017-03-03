@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   def index
-    @yt_playlist = YtPlaylist.new
+    @playlist = YtPlaylist.new
   end
   
   def playlist_total
-    @yt_playlist = YtPlaylist.new(yt_playlist_params)
-    if @yt_playlist.process_playlist
-        
+    @playlist = YtPlaylist.new(yt_playlist_params)
+    if @playlist.process_playlist
+      render :playlist_total  
     else
       render :index  
     end

@@ -1,15 +1,15 @@
 <h2>Youtube Playlist Total Time Count</h2>
 
-<%= form_for(@yt_playlist, url: playlist_total_url, method: :get) do |f| %>
+<%= form_for(@playlist, url: playlist_total_url, method: :get) do |f| %>
   <%= f.label :url, "Playlist URL:" %>
   <%= f.text_field :url, size: "75" %>
   <%= f.submit "Retrieve" %>
 <% end %>
 
 
-<% if @yt_playlist.errors.any? %>
+<% if @playlist.errors.any? %>
   <ul class="error-messages">
-    <% @yt_playlist.errors.messages.each do |k, messages| %>
+    <% @playlist.errors.messages.each do |k, messages| %>
       <% messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

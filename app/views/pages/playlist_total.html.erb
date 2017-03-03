@@ -1,1 +1,14 @@
 <h2>Playlist Total</h2>
+
+<h3><%= @playlist.title %></h3>
+
+<% if @playlist.videos.any? %>
+  <ul>
+    <% @playlist.videos.each do |video| %>
+      <li><%= video[:title] %> - <%= video[:length] %></li>
+    <% end %>
+  </ul>
+  <p>
+    Total Duration: <%= @playlist.total_duration %>
+  </p>
+<% end %>
