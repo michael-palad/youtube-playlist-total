@@ -1,24 +1,7 @@
-# README
+# Youtube Playlist Total Duration Calculator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web-app written on Ruby on Rails that calculates the total duration of
+a YouTube playlist.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Required Environment Variable
+export YOUTUBE_API_KEY=<your youtube api key here>
