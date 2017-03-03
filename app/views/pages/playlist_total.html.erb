@@ -3,7 +3,7 @@
     <h2 class="page-title text-center">Playlist Total</h2>
     
     <h3 class="playlist-title text-center">
-      <%= @playlist.title %> - 
+      <%= link_to @playlist.title, @playlist.url, target: "_blank" %> - 
       Total Duration (<%= @playlist.total_duration %>)
     </h3>
     
@@ -18,7 +18,11 @@
         <tbody>
           <% @playlist.videos.each do |video| %>
             <tr>
-              <td><%= video[:title] %></td>
+              <td>
+                <%= link_to video[:title] , 
+                      "https://www.youtube.com/watch?v=#{video[:id]}",
+                      target: "_blank" %>
+              </td>
               <td><%= video[:length] %></td>
             </tr>
           <% end %>
