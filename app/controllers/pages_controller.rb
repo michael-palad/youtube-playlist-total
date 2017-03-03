@@ -4,8 +4,12 @@ class PagesController < ApplicationController
   end
   
   def playlist_total
-    url = yt_playlist_params[:url]
-    
+    @yt_playlist = YtPlaylist.new(yt_playlist_params)
+    if @yt_playlist.process_playlist
+        
+    else
+      render :index  
+    end
   end
   
   private
