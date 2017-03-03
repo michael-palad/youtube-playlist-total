@@ -1,18 +1,26 @@
-<h2>Youtube Playlist Total Time Count</h2>
-
-<%= form_for(@playlist, url: playlist_total_url, method: :get) do |f| %>
-  <%= f.label :url, "Playlist URL:" %>
-  <%= f.text_field :url, size: "75" %>
-  <%= f.submit "Retrieve" %>
-<% end %>
-
-
-<% if @playlist.errors.any? %>
-  <ul class="error-messages">
-    <% @playlist.errors.messages.each do |k, messages| %>
-      <% messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2 class="page-title">Youtube Playlist Total Time Count</h2>
+  
+    <%= form_for(@playlist, url: playlist_total_url, method: :get) do |f| %>
+      <div class="form-group">
+        <%= f.label :url, "Playlist URL:" %>
+        <%= f.text_field :url, size: "75", class: "form-control" %>
+      </div>
+      
+      <%= f.submit "Retrieve", class: "btn btn-primary" %>
     <% end %>
-  </ul>
-<% end %>
+    
+    
+    <% if @playlist.errors.any? %>
+      <ul class="error-messages">
+        <% @playlist.errors.messages.each do |k, messages| %>
+          <% messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+    
+  </div>
+</div>

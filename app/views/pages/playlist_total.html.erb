@@ -1,26 +1,39 @@
-<h2>Playlist Total</h2>
-
-<h3><%= @playlist.title %></h3>
-
-<% if @playlist.videos.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Video Title</th>       
-        <th>Video Duration</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @playlist.videos.each do |video| %>
-        <tr>
-          <td><%= video[:title] %></td>
-          <td><%= video[:length] %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  
-  <p>
-    Total Duration: <%= @playlist.total_duration %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2 class="page-title">Playlist Total</h2>
+    
+    <h3 class="playlist-title">
+      <%= @playlist.title %> - 
+      Total Duration (<%= @playlist.total_duration %>)
+    </h3>
+    
+    <% if @playlist.videos.any? %>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Video Title</th>       
+            <th>Video Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @playlist.videos.each do |video| %>
+            <tr>
+              <td><%= video[:title] %></td>
+              <td><%= video[:length] %></td>
+            </tr>
+          <% end %>
+          
+          <tr>
+            <td>
+              <strong>Total Duration:</strong>
+            </td>
+            <td>
+              <strong><%= @playlist.total_duration %></strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+    
+  </div>
+</div>

@@ -35,3 +35,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'yt', '~> 0.29.1'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
