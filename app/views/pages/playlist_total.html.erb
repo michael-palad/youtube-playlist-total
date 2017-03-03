@@ -11,6 +11,7 @@
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th>Thumbnail</th>
             <th>Video Title</th>       
             <th>Video Duration</th>
           </tr>
@@ -19,25 +20,33 @@
           <% @playlist.videos.each do |video| %>
             <tr>
               <td>
+                <%= link_to "https://www.youtube.com/watch?v=#{video[:id]}",
+                      target: "_blank" do %>
+                  <%= image_tag(video[:thumbnail_url]) %>
+                <% end %>
+              </td>
+              <td>
                 <%= link_to video[:title] , 
                       "https://www.youtube.com/watch?v=#{video[:id]}",
                       target: "_blank" %>
               </td>
-              <td><%= video[:length] %></td>
+              <td  class="video-duration">
+                <%= video[:length] %>
+              </td>
             </tr>
           <% end %>
           
           <tr>
-            <td>
-              <strong>Total Duration:</strong>
+            <td colspan="2" class="video-duration">
+              <h3>Total Duration:</h3>
             </td>
-            <td>
+            <td class="video-duration">
               <strong><%= @playlist.total_duration %></strong>
             </td>
           </tr>
         </tbody>
       </table>
     <% end %>
-    
+      
   </div>
 </div>

@@ -27,7 +27,8 @@ class YtPlaylist
       playlist.playlist_items.each do |item|
         begin
           video = Yt::Video.new(id: item.video_id)
-          @videos << { id: video.id, title: video.title, length: video.length }
+          @videos << { id: video.id, title: video.title, length: video.length,
+                       thumbnail_url: video.thumbnail_url }
         rescue
           next  # for deleted and invalid videos
         end

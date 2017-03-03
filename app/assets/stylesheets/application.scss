@@ -17,3 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.table > tbody > tr > td {
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.table > tbody > tr > td.video-duration {
+  text-align: center;
+}
