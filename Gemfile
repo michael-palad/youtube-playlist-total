@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'sqlite3'
 end
 
@@ -28,6 +29,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'capybara', '~> 2.12'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'  
+end
+
 group :production do
   gem 'pg'
 end
@@ -36,3 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'yt', '~> 0.29.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'validate_url', '~> 1.0', '>= 1.0.2'

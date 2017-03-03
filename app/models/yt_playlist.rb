@@ -1,5 +1,6 @@
 class YtPlaylist
   include ActiveModel::Model
+  include ActiveModel::Validations
   include ActionView::Helpers::TextHelper
   
   attr_accessor :url
@@ -7,6 +8,8 @@ class YtPlaylist
   attr_reader :title
   attr_reader :videos
   attr_reader :total_duration
+  
+  validates_url :url, message: "Please enter a valid url"
   
   def process_playlist
     begin

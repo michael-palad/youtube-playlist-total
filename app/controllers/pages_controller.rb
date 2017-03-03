@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   
   def playlist_total
     @playlist = YtPlaylist.new(yt_playlist_params)
-    if @playlist.process_playlist
+    if @playlist.valid? && @playlist.process_playlist
       render :playlist_total  
     else
       render :index  
