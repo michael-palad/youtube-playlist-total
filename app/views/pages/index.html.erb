@@ -1,0 +1,7 @@
+<h2>Youtube Playlist Total Time Count</h2>
+
+<%= form_for(@yt_playlist, url: playlist_total_url, method: :get) do |f| %>
+  <%= f.label :url, "Playlist URL:" %>
+  <%= f.text_field :url %>
+  <%= f.submit "Retrieve" %>
+<% end %>
