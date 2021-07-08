@@ -30,7 +30,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.12'
+  gem 'capybara', '~> 2.12', '>= 2.12.0'
 end
 
 group :production do
